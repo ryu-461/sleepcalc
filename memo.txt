@@ -1,0 +1,30 @@
+  <?php
+  //接続情報の変数化
+  $dsn = 'mysql:dbname=sleepcalc;host=localhost';
+  $user = 'root';
+  $password = 'MYpass_108746';
+
+  // 変数の初期化
+  $sql = null;
+  $res = null;
+  $pdh = null;
+
+  // 接続チェック
+  try {
+    $pdh = new PDO($dsn, $user, $password);
+    // SQL作成
+    $sql = "INSERT INTO 'sleeplogs' (
+      `日付`, `睡眠時間`
+    ) VALUES (
+      'CURRENT_DATE()','09:10:28'
+    )";
+
+    // SQL実行
+    $res = $pdh->query($sql);
+    $res->execute();
+    echo '登録完了しました';
+  } catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage(), (int) $e->getCode());
+    echo '登録失敗しました';
+  }
+?>

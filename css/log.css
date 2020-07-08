@@ -1,0 +1,17 @@
+@charset "UTF-8";
+body {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  padding-top: 60px;
+}
+
+/* ナビゲーションバーの背景色 */
+.navbar {
+  background-color: #3C8BC6;
+}
+
+/* ナビゲーションバーの文字色 */
+#linktext {
+  color: #EEF1F6;
+  font-size: 120%;
+  margin-left: 20px;
+}

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  padding-top: 70px;
+}
+
+/* ナビゲーションバーの背景色 */
+.navbar {
+  background-color:#3C8BC6;
+}
+
+/* ナビゲーションバーの文字色 */
+#linktext {
+  color: #EEF1F6;
+  font-size: 120%;
+  margin-left: 20px;
+}
+
+header {
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header .logo {
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  ;
+}
+
+#sleep {
+  width: 100px;
+  height: 100px;
+}
+
+#tool {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#content {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+#btn {
+  margin-top: 50px;
+}
+
+label {
+  font-style: italic;
+}
