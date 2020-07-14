@@ -1,5 +1,30 @@
 <?php
     include('./_header.php');
+
+    try {
+        //接続情報の変数化
+      $dsn = 'mysql:dbname=sleepcalc;host=localhost';
+      $user = 'root';
+      $password = 'MYpass_108746';
+      $pdh = new PDO($dsn, $user, $password,
+      [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_EMULATE_PREPARES => false,
+      ]
+      );
+      
+      // 受け取ったidのレコードの削除
+      if (isset($_POST["delete_id"])) {
+        $delete_id = $_POST["delete_id"];
+        $sql  = "DELETE FROM sleeplogs WHERE ID = :delete_id;";
+        $stmt = $pdh->prepare($sql);
+        $stmt -> bindValue(":delete_id", $delete_id, PDO::PARAM_INT);
+        $stmt -> execute();
+      }
+  
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int) $e->getCode());
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,30 +45,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
 <body>
-<?php
-  //接続情報の変数化
-  $dsn = 'mysql:dbname=sleepcalc;host=localhost';
-  $user = 'root';
-  $password = 'MYpass_108746';
-  
-  try {
-    $pdh = new PDO($dsn, $user, $password);
-
-  // 受け取ったidのレコードの削除
-  if (isset($_POST["delete_id"])) {
-    $delete_id = $_POST["delete_id"];
-    $sql  = "DELETE FROM sleeplogs WHERE ID = :delete_id;";
-    $stmt = $pdh->prepare($sql);
-    $stmt -> bindValue(":delete_id", $delete_id, PDO::PARAM_INT);
-    $stmt -> execute();
-  }
-
-  } catch (\PDOException $e) {
-      throw new \PDOException($e->getMessage(), (int) $e->getCode());
-  }
-  ?>
-
-
 
   <table class="table thead-light table-hover">
     <tr>
