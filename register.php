@@ -2,40 +2,42 @@
   //接続情報の変数化
   $dsn = 'mysql:dbname=sleepcalc;host=localhost';
   $user = 'root';
-  $password = 'MYpass_108746';
+  $password = 'Ryu_1146';
   
     // 変数の初期化
   $sql = null;
   $stmt = null;
 
-  // 今日の日付
-  $today = $_POST["today"];
-  // 就寝時間
-  $sleeptime = $_POST["intime"];
+  if (isset($_POST["today"]) && isset($_POST["intime"])) {
+    // 今日の日付
+    $today = $_POST["today"];
+    // 就寝時間
+    $sleeptime = $_POST["intime"];
 
-  try {
-    $pdh = new PDO($dsn, $user, $password);
-    // SQL作成
-    $sql = "INSERT INTO sleeplogs (
-      日付, 睡眠時間
-    ) VALUES (
-      :today,:sleeptime
-    )";
-
-    // SQL実行
-    $stmt = $pdh->prepare($sql);
-
-    // 挿入する値を配列に格納する
-    $params = array(':today' => $today, ':sleeptime' => $sleeptime);
-
-    // 挿入する値が入った変数をexecuteにセットしてSQLを実行
-    $stmt->execute($params);
-
-  } catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int) $e->getCode());
-    echo '登録失敗しました';
+    try {
+      $pdh = new PDO($dsn, $user, $password);
+      // SQL作成
+      $sql = "INSERT INTO sleeplogs (
+        日付, 睡眠時間
+      ) VALUES (
+        :today,:sleeptime
+      )";
+  
+      // SQL実行
+      $stmt = $pdh->prepare($sql);
+  
+      // 挿入する値を配列に格納する
+      $params = array(':today' => $today, ':sleeptime' => $sleeptime);
+  
+      // 挿入する値が入った変数をexecuteにセットしてSQLを実行
+      $stmt->execute($params);
+  
+    } catch (\PDOException $e) {
+      throw new \PDOException($e->getMessage(), (int) $e->getCode());
+      echo '登録失敗しました';
+    }
   }
-  $pdh = null;
+
 ?>
 
 <!DOCTYPE html>

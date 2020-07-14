@@ -5,7 +5,7 @@
         //接続情報の変数化
       $dsn = 'mysql:dbname=sleepcalc;host=localhost';
       $user = 'root';
-      $password = 'MYpass_108746';
+      $password = 'Ryu_1146';
       $pdh = new PDO($dsn, $user, $password,
       [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
