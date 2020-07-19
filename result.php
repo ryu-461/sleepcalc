@@ -22,14 +22,13 @@
   <!-- sweetalert-->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-
 <body>
-
-  <header>
-    <a href="index.php"><img id="logo" src="img/logo-removebg-preview.png"></a>
-    <img id="sleep" src="img/suimin_man.png" alt="寝てる人のイラスト">
-    <hr>
-  </header>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <a href="index.php"><img id="logo" src="img/logo-removebg-preview.png" class="img-fluid"></a>
+      <img id="sleep" src="img/suimin_man.png" alt="睡眠のイラスト">
+    </div>
+  </div>
 
   <?php
     // 起床時間
@@ -79,22 +78,23 @@
     echo "<h3>$resultmsg</h3>"; // 結果
     echo "</div>"; 
   ?>
+
   <br>
-  <div id="btn" class="text-center">
-  <input class="btn-lg btn-primary text-left" type="button" onclick="location.href='index.php'" value="戻る"> 
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <input class="btn-block btn-primary" type="button" onclick="location.href='index.php'" value="戻る"> 
       <form method="POST" action="register.php">
         <input type="hidden" name="today" value="<?php echo $today ?>">
         <input type="hidden" name="intime" value="<?php echo $sleepingtime ?>">
-        <input class="btn-lg btn-primary text-right" id="gobtn" type="submit" value="登録">
+        <input class="btn-block btn-primary" id="gobtn" type="submit" value="登録">
       </form>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <small>© 2020 Rtakahashi</small>
-    </div>
-  </div>
+  <?php
+    include('./_footer.php');
+  ?>
+  
 </body>
-
 </html>

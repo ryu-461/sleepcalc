@@ -51,7 +51,7 @@
         <th class="text-center">ID</th>
         <th class="text-center">日付</th>
         <th class="text-center">睡眠時間</th>
-        <th class="text-center">操作</th>
+        <th class="text-center">ー</th>
     </tr>
 
   <?php
@@ -70,5 +70,13 @@
     </tr> 
   <?php  } ?>
   </table>
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+    <button type="button" class="btn btn-primary rounded-0">グラフで見る</button>
+  </div>
+  <?php
+    // include('./_footer.php');
+  ?>
   <script src="script/main.js"></script>
 </body>

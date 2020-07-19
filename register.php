@@ -58,7 +58,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- sweetalert-->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -66,17 +65,19 @@
     include('./_header.php');
   ?>
 
-  <header>
-    <a href=""><img id="logo" src="img/logo-removebg-preview.png"></a>
-    <img id="sleep" src="img/suimin_man.png" alt="寝てる人のイラスト">
-    <hr>
-  </header>
+<div class="row">
+    <div class="col-lg-12 text-center">
+      <a href="index.php"><img id="logo" src="img/logo-removebg-preview.png" class="img-fluid"></a>
+      <img id="sleep" src="img/suimin_man.png" alt="睡眠のイラスト">
+    </div>
+  </div>
+  <hr>
   <div id="tool">
     <h3>今日の日付 : <?php echo $today; ?></h3>
     <h3>睡眠時間を登録しました!</h3>
-    <br>
-    <small>登録した睡眠時間はDATAタブから見ることができます。</small>
-    <br>
+      <br>
+    <h5>登録した睡眠時間はDATAタブから見ることができます。</h5>
+      <br>
     <input class="btn-lg btn-primary back text-center" type="button" onclick="location.href='index.php'" value="戻る" id="btn">
   </div>
 </body>

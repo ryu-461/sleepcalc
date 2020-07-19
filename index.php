@@ -23,13 +23,18 @@ include('./_header.php');
   <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body>
-  <header>
-    <a href=""><img id="logo" src="img/logo-removebg-preview.png"></a>
-    <img id="sleep" src="img/suimin_man.png" alt="睡眠のイラスト">
-    <hr>
-  </header>
-  <div id="tool">
-    <h5>質のいい睡眠は日々のパフォーマンスを上げるのに必要不可欠です。<br> 自分の睡眠時間を見直して健康な体を作りましょう!!</h5>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <a href=""><img id="logo" src="img/logo-removebg-preview.png" class="img-fluid"></a>
+      <img id="sleep" src="img/suimin_man.png" alt="睡眠のイラスト">
+    </div>
+  </div>
+
+  <hr>
+
+  <div id="tool" class="">
+    <h5>質のいい睡眠は日々のパフォーマンスを上げるのに必要不可欠です。</h5> 
+    <h5>自分の睡眠時間を見直して健康な体を作りましょう!!</h5>
     <br>
   </div>
     <div id="content" class="text-center">
@@ -44,10 +49,9 @@ include('./_header.php');
 
   <script src="script/main.js"></script>
 
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <small>© 2020 Rtakahashi</small>
-    </div>
-  </div>
+  <?php
+    include('./_footer.php');
+  ?>
+
 </body>
 </html>

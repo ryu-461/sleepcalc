@@ -24,11 +24,12 @@
 </head>
 <body>
 
-  <header>
-    <a href=""><img id="logo" src="img/logo-removebg-preview.png"></a>
-    <img id="sleep" src="img/suimin_man.png" alt="睡眠のイラスト">
-    <hr>
-  </header>
+<div class="row">
+    <div class="col-lg-12 text-center">
+      <a href="index.php"><img id="logo" src="img/logo-removebg-preview.png" class="img-fluid"></a>
+    </div>
+  </div>
+
   <div class="container-fruid">
     <div class="row">
       <div class="col-md-9">
@@ -44,6 +45,9 @@
       </div>
     </div>
   </div>
-  
+
+  <?php
+    include('./_footer.php');
+  ?>
   <script src="script/main.js"></script>
 </body>
